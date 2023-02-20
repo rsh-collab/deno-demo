@@ -1,14 +1,22 @@
-export function Layout(props) {
+import type { ComponentChildren } from "preact";
 
-  return (
-    <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center',
-        minHeight: '100vh'
-    }}>
-        {props.children}
-    </div>
-  );
+type Props = {
+    children: ComponentChildren;
+};
+
+export function Layout(props: Props) {
+    return (
+        <div
+            class="container"
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+                minHeight: "100vh",
+            }}
+        >
+            {props.children}
+        </div>
+    );
 }
